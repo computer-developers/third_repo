@@ -1,4 +1,4 @@
-////BETA VERSION .................
+
 
 #include<stdio.h>
 #include<conio.h>
