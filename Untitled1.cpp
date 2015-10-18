@@ -1,9 +1,6 @@
-
-
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
-
 struct node
 {
 	int ans;
@@ -11,16 +8,14 @@ struct node
 	int matrix[2][2];
 	struct node *link;
 }*start;
-int i,j,m[2][2],power1,m2[2][2]={NULL,NULL,NULL,NULL},y[2][2]={NULL,NULL,NULL,NULL};
-int b=0;
-
+int i,j,m[2][2],power1,m2[2][2]={NULL,NULL,NULL,NULL},y[2][2]={NULL,NULL,NULL,NULL},b=0;
 void insert()
 {
 		for(i=0;i<2;i++)
 		{
 		for(j=0;j<2;j++)
 		{
-		printf("enter your value [%d][%d]: ",i,j);
+		printf("\nenter your value [%d][%d]: ",i,j);
 		scanf("%d",&m[i][j]);
 	}
 	}
@@ -39,12 +34,11 @@ void insert()
 	p->link=start;
 	start=p;
 }
-
-
 void display()
 {
 	struct node *temp;
 	temp=start;
+	printf("\n");
 	while(temp->link!=NULL)
 	{
 		for(i=0;i<2;i++)
@@ -68,7 +62,6 @@ void display()
 		}
 		printf("\n");
 }
-
 void pow()
 {
 	int y1;
@@ -112,9 +105,9 @@ void pow()
 	temp=temp->link;
 }
 }
-
 void display_ans()
 	{
+		printf("\n");
 		for(i=0;i<2;i++)
 		{
 			for(j=0;j<2;j++)
@@ -135,49 +128,36 @@ void delete1()
 	delete start;
 	start=temp;
 }
-
-
  main()
 {
-	int ch;
 	do
 	{
 		printf("\n1.insert\n2.display\n3.calculation\n4.display ans\n5.exit\n6.delete\n\n");
 		printf("enter your choice: ");
-		scanf("%d",&ch);
-		switch(ch)
+		switch(getche())
 		{
-			case 1:
+			case '1':
 			insert();
 			break;
-			case 2: 
+			case '2': 
 			display();
 			break;
-			case 3:
+			case '3':
 			pow();
 			break;
-			case 4:
+			case '4':
 			display_ans();
 			break;
-			case 5:
-			exit(0);
+			case '5':
+			return 0;
 			break;
-			case 6:
+			case '6':
 			delete1();
 			break;
 			default:
 			printf("choice invalid........\n\n");
 			break;
 		}
-	}while(ch!=5);
+	}while(1);
 	getch();
 }
-
-
-
-
-
-
-
-
-
